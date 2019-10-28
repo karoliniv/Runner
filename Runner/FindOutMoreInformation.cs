@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace Runner
 {
-    public partial class RegisterAsARunner : Form
+    public partial class FindOutMoreInformation : Form
     {
-        public RegisterAsARunner()
+        public FindOutMoreInformation()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();        }
+            this.Close();
+        }
     }
 }

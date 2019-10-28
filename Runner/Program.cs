@@ -11,7 +11,6 @@ namespace Runner
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
-        [STAThread]
 
         public static DateTime x = new DateTime(2019, 11, 6, 6, 6, 00);
 

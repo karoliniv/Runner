@@ -19,7 +19,36 @@ namespace Runner
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimeSpan y = Program x - DateTime.Now;
+            TimeSpan y = Program.x - DateTime.Now;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new RegisterAsARunner()).ShowDialog();
+            this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new SponsorARunner()).ShowDialog();
+            this.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new FindOutMoreInformation()).ShowDialog();
+            this.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new Login()).ShowDialog();
+            this.Show();
         }
     }
 }
