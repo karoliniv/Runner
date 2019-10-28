@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Runner
 {
-    public partial class Main : Form
+    public partial class RegisterAsARunner : Form
     {
-        public Main()
+        public RegisterAsARunner()
         {
             InitializeComponent();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            TimeSpan y = Program x - DateTime.Now;
         }
     }
 }
