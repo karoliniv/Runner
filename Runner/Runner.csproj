@@ -72,6 +72,11 @@
     <Compile Include="RegisterAsARunner.Designer.cs">
       <DependentUpon>RegisterAsARunner.cs</DependentUpon>
     </Compile>
+    <Compile Include="RunnerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RunnerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SponsorARunner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +116,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RunnerDataSet.xsc">
+      <DependentUpon>RunnerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RunnerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RunnerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RunnerDataSet.xss">
+      <DependentUpon>RunnerDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

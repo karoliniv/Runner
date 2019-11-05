@@ -20,7 +20,7 @@ namespace Runner
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan y = Program.x - DateTime.Now;
-
+            label3.Text = y.Days.ToString() + " дней " + y.Hours.ToString() + " часов " + y.Minutes.ToString() + " минут до старта марафона!";
         }
 
         private void button1_Click(object sender, EventArgs e)

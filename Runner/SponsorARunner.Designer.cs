@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,7 +39,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -55,8 +55,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.runnerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.runnerDataSet = new Runner.RunnerDataSet();
+            this.runnerTableAdapter = new Runner.RunnerDataSetTableAdapters.RunnerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -144,52 +150,70 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBox1.Location = new System.Drawing.Point(159, 156);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(159, 20);
             this.textBox1.TabIndex = 22;
+            this.textBox1.Text = "Ваше имя";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBox2.Location = new System.Drawing.Point(159, 209);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(159, 20);
             this.textBox2.TabIndex = 23;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(557, 284);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(95, 20);
-            this.textBox3.TabIndex = 24;
+            this.textBox2.Text = "Владелец карты";
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox4
             // 
+            this.textBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBox4.Location = new System.Drawing.Point(159, 288);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(159, 20);
             this.textBox4.TabIndex = 25;
+            this.textBox4.Text = "123";
+            this.textBox4.Click += new System.EventHandler(this.textBox6_Click);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(159, 261);
+            this.textBox5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox5.Location = new System.Drawing.Point(159, 235);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(159, 20);
             this.textBox5.TabIndex = 26;
+            this.textBox5.Text = "1234 1234 1234 1234";
+            this.textBox5.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(159, 235);
+            this.textBox6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox6.Location = new System.Drawing.Point(159, 262);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(54, 20);
             this.textBox6.TabIndex = 27;
+            this.textBox6.Text = "01";
+            this.textBox6.Click += new System.EventHandler(this.textBox4_Click);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(219, 235);
+            this.textBox7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox7.Location = new System.Drawing.Point(219, 262);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(99, 20);
             this.textBox7.TabIndex = 28;
+            this.textBox7.Text = "2017";
+            this.textBox7.Click += new System.EventHandler(this.textBox5_Click);
             // 
             // label2
             // 
@@ -248,11 +272,16 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.runnerBindingSource;
+            this.comboBox1.DisplayMember = "ChooseRunner";
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(159, 182);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 21);
+            this.comboBox1.Size = new System.Drawing.Size(159, 22);
             this.comboBox1.TabIndex = 34;
+            this.comboBox1.ValueMember = "RunnerId";
             // 
             // label7
             // 
@@ -319,11 +348,38 @@
             this.label12.TabIndex = 40;
             this.label12.Text = "50$";
             // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox3.Location = new System.Drawing.Point(557, 284);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(95, 20);
+            this.textBox3.TabIndex = 41;
+            this.textBox3.Text = "50";
+            this.textBox3.Click += new System.EventHandler(this.textBox7_Click);
+            // 
+            // runnerBindingSource
+            // 
+            this.runnerBindingSource.DataMember = "Runner";
+            this.runnerBindingSource.DataSource = this.runnerDataSet;
+            // 
+            // runnerDataSet
+            // 
+            this.runnerDataSet.DataSetName = "RunnerDataSet";
+            this.runnerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // runnerTableAdapter
+            // 
+            this.runnerTableAdapter.ClearBeforeFill = true;
+            // 
             // SponsorARunner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -340,7 +396,6 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
@@ -357,6 +412,8 @@
             this.Text = "SponsorARunner";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +431,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
@@ -391,5 +447,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox3;
+        private RunnerDataSet runnerDataSet;
+        private System.Windows.Forms.BindingSource runnerBindingSource;
+        private RunnerDataSetTableAdapters.RunnerTableAdapter runnerTableAdapter;
     }
 }

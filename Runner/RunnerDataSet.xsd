@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RunnerDataSet" targetNamespace="http://tempuri.org/RunnerDataSet.xsd" xmlns:mstns="http://tempuri.org/RunnerDataSet.xsd" xmlns="http://tempuri.org/RunnerDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RunnerConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RunnerConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Runner.Properties.Settings.GlobalReference.Default.RunnerConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RunnerTableAdapter" GeneratorDataComponentClassName="RunnerTableAdapter" Name="Runner" UserDataComponentName="RunnerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RunnerConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [User].FirstName + ' ' + [User].LastName + ' - ' + CONVERT(nvarchar, RegistrationEvent.BibNumber) + ' (' + CONVERT(nvarchar, Country.CountryCode) + ')' AS ChooseRunner, Runner.RunnerId, Registration.RegistrationId, 
+                         [User].Email
+FROM            [User] INNER JOIN
+                         Runner ON [User].Email = Runner.Email INNER JOIN
+                         Country ON Runner.CountryCode = Country.CountryCode INNER JOIN
+                         Registration ON Runner.RunnerId = Registration.RunnerId INNER JOIN
+                         RegistrationEvent ON Registration.RegistrationId = RegistrationEvent.RegistrationId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ChooseRunner" DataSetColumn="ChooseRunner" />
+              <Mapping SourceColumn="RunnerId" DataSetColumn="RunnerId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RunnerDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RunnerDataSet" msprop:Generator_UserDSName="RunnerDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Runner" msprop:Generator_TableClassName="RunnerDataTable" msprop:Generator_TableVarName="tableRunner" msprop:Generator_RowChangedName="RunnerRowChanged" msprop:Generator_TablePropName="Runner" msprop:Generator_RowDeletingName="RunnerRowDeleting" msprop:Generator_RowChangingName="RunnerRowChanging" msprop:Generator_RowEvHandlerName="RunnerRowChangeEventHandler" msprop:Generator_RowDeletedName="RunnerRowDeleted" msprop:Generator_RowClassName="RunnerRow" msprop:Generator_UserTableName="Runner" msprop:Generator_RowEvArgName="RunnerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ChooseRunner" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnChooseRunner" msprop:Generator_ColumnPropNameInRow="ChooseRunner" msprop:Generator_ColumnPropNameInTable="ChooseRunnerColumn" msprop:Generator_UserColumnName="ChooseRunner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="227" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RunnerId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRunnerId" msprop:Generator_ColumnPropNameInRow="RunnerId" msprop:Generator_ColumnPropNameInTable="RunnerIdColumn" msprop:Generator_UserColumnName="RunnerId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
