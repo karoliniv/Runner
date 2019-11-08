@@ -48,29 +48,57 @@ namespace Runner
             textBox3.Text = " ";
         }
 
-        private void textBox4_Click(object sender, EventArgs e)
-        {
-            textBox5.Text = " ";
-        }
 
-        private void textBox5_Click(object sender, EventArgs e)
+        private void textBox6_Click(object sender, EventArgs e)
         {
             textBox6.Text = " ";
         }
 
-        private void textBox6_Click(object sender, EventArgs e)
+        private void textBox7_Click(object sender, EventArgs e)
         {
             textBox7.Text = " ";
         }
 
-        private void textBox7_Click(object sender, EventArgs e)
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
-            textBox4.Text = " ";
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number))
+            {
+                e.Handled = true;
+            }
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void maskedTextBox1_Click(object sender, EventArgs e)
         {
-            textBox5.MaxLength = 16;
+            maskedTextBox1.Text = " "; 
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Text = " ";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            //MessageBox.Show(now.Year.ToString()+now.Month.ToString());
+            
+
+            if(Convert.ToInt32(textBox7.Text) < now.Year)
+            {
+                MessageBox.Show("Wrong year");
+
+                if (Convert.ToInt32(textBox6.Text) < now.Month)
+                {
+                    MessageBox.Show("Wrong mounth");
+                }
+            }
+        }
+
+        private void maskedTextBox2_Click(object sender, EventArgs e)
+        {
+            maskedTextBox2.Text = " ";
         }
     }
 }
