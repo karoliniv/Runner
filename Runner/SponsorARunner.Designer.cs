@@ -39,8 +39,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,6 +57,9 @@
             this.runnerTableAdapter = new Runner.RunnerDataSetTableAdapters.RunnerTableAdapter();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.runnerBindingSource)).BeginInit();
@@ -115,6 +116,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "-";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -125,6 +127,7 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "+";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -170,28 +173,6 @@
             this.textBox2.TabIndex = 23;
             this.textBox2.Text = "Владелец карты";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox6.Location = new System.Drawing.Point(126, 262);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(47, 20);
-            this.textBox6.TabIndex = 27;
-            this.textBox6.Text = "01";
-            this.textBox6.Click += new System.EventHandler(this.textBox6_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox7.Location = new System.Drawing.Point(179, 262);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(139, 20);
-            this.textBox7.TabIndex = 28;
-            this.textBox7.Text = "2017";
-            this.textBox7.Click += new System.EventHandler(this.textBox7_Click);
             // 
             // label2
             // 
@@ -331,7 +312,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(568, 233);
+            this.label12.Location = new System.Drawing.Point(575, 233);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 43);
             this.label12.TabIndex = 40;
@@ -347,6 +328,7 @@
             this.textBox3.Size = new System.Drawing.Size(95, 20);
             this.textBox3.TabIndex = 41;
             this.textBox3.Text = "50";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
             // 
             // runnerTableAdapter
@@ -377,11 +359,51 @@
             this.maskedTextBox2.Text = "123";
             this.maskedTextBox2.Click += new System.EventHandler(this.maskedTextBox2_Click);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button6.BackgroundImage = global::Runner.Properties.Resources.attention1;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.button6.Location = new System.Drawing.Point(607, 138);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(69, 33);
+            this.button6.TabIndex = 45;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox3.Location = new System.Drawing.Point(128, 262);
+            this.maskedTextBox3.Mask = "00";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(53, 21);
+            this.maskedTextBox3.TabIndex = 46;
+            this.maskedTextBox3.Text = "01";
+            this.maskedTextBox3.Click += new System.EventHandler(this.maskedTextBox3_Click);
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskedTextBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBox4.Location = new System.Drawing.Point(187, 262);
+            this.maskedTextBox4.Mask = "0000";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(131, 21);
+            this.maskedTextBox4.TabIndex = 47;
+            this.maskedTextBox4.Text = "2017";
+            this.maskedTextBox4.Click += new System.EventHandler(this.maskedTextBox4_Click);
+            // 
             // SponsorARunner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.maskedTextBox4);
+            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.textBox3);
@@ -397,8 +419,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button5);
@@ -434,14 +454,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -454,5 +471,9 @@
         private RunnerDataSetTableAdapters.RunnerTableAdapter runnerTableAdapter;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }

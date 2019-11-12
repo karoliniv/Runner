@@ -48,17 +48,6 @@ namespace Runner
             textBox3.Text = " ";
         }
 
-
-        private void textBox6_Click(object sender, EventArgs e)
-        {
-            textBox6.Text = " ";
-        }
-
-        private void textBox7_Click(object sender, EventArgs e)
-        {
-            textBox7.Text = " ";
-        }
-
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
@@ -85,11 +74,11 @@ namespace Runner
             //MessageBox.Show(now.Year.ToString()+now.Month.ToString());
             
 
-            if(Convert.ToInt32(textBox7.Text) < now.Year)
+            if(Convert.ToInt32(maskedTextBox4.Text) < now.Year)
             {
                 MessageBox.Show("Wrong year");
 
-                if (Convert.ToInt32(textBox6.Text) < now.Month)
+                if (Convert.ToInt32(maskedTextBox3.Text) < now.Month)
                 {
                     MessageBox.Show("Wrong mounth");
                 }
@@ -99,6 +88,33 @@ namespace Runner
         private void maskedTextBox2_Click(object sender, EventArgs e)
         {
             maskedTextBox2.Text = " ";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            (new NameOfSponsor()).ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(textBox3.Text);
+            textBox3.Text = Convert.ToString(a + 10);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(textBox3.Text);
+            textBox3.Text = Convert.ToString(a - 10);
+        }
+
+        private void maskedTextBox3_Click(object sender, EventArgs e)
+        {
+            maskedTextBox3.Text = " ";
+        }
+
+        private void maskedTextBox4_Click(object sender, EventArgs e)
+        {
+            maskedTextBox4.Text = " ";
         }
     }
 }
