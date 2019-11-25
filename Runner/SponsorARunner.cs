@@ -16,6 +16,8 @@ namespace Runner
         {
             InitializeComponent();
             this.Load += SponsorARunner_Load;
+
+            textBoxMoney.TextChanged += textBoxMoney_TextChanged;
         }
 
         private void SponsorARunner_Load(object sender, EventArgs e)
@@ -43,9 +45,9 @@ namespace Runner
             textBox2.Text = " ";
         }
 
-        private void textBox3_Click(object sender, EventArgs e)
+        private void textBoxMoney_Click(object sender, EventArgs e)
         {
-            textBox3.Text = " ";
+            textBoxMoney.Text = " ";
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
@@ -65,14 +67,13 @@ namespace Runner
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-            comboBox1.Text = " ";
+            comboBoxRunner.Text = " ";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             //MessageBox.Show(now.Year.ToString()+now.Month.ToString());
-            
 
             if(Convert.ToInt32(maskedTextBox4.Text) < now.Year)
             {
@@ -83,6 +84,14 @@ namespace Runner
                     MessageBox.Show("Wrong mounth");
                 }
             }
+
+            SponsorshipConfirmation x = new SponsorshipConfirmation();
+            x.label12.Text = labelMoney.Text;
+            x.labelRunner.Text = comboBoxRunner.Text;
+
+            this.Close();
+            x.ShowDialog();
+
         }
 
         private void maskedTextBox2_Click(object sender, EventArgs e)
@@ -97,14 +106,14 @@ namespace Runner
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(textBox3.Text);
-            textBox3.Text = Convert.ToString(a + 10);
+            int a = Convert.ToInt32(textBoxMoney.Text);
+            textBoxMoney.Text = Convert.ToString(a + 10);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(textBox3.Text);
-            textBox3.Text = Convert.ToString(a - 10);
+            int a = Convert.ToInt32(textBoxMoney.Text);
+            textBoxMoney.Text = Convert.ToString(a - 10);
         }
 
         private void maskedTextBox3_Click(object sender, EventArgs e)
@@ -115,6 +124,11 @@ namespace Runner
         private void maskedTextBox4_Click(object sender, EventArgs e)
         {
             maskedTextBox4.Text = " ";
+        }
+
+        public void textBoxMoney_TextChanged(object sender, EventArgs e)
+        {
+            labelMoney.Text = textBoxMoney.Text + "$";
         }
     }
 }

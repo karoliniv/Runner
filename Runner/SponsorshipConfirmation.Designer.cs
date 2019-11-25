@@ -33,7 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.labelRunner = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -94,15 +94,15 @@
             this.label12.TabIndex = 44;
             this.label12.Text = "50$";
             // 
-            // label11
+            // labelRunner
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(290, 192);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(228, 25);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "Иван Прудов (204) из RUS";
+            this.labelRunner.AutoSize = true;
+            this.labelRunner.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRunner.Location = new System.Drawing.Point(290, 192);
+            this.labelRunner.Name = "labelRunner";
+            this.labelRunner.Size = new System.Drawing.Size(228, 25);
+            this.labelRunner.TabIndex = 43;
+            this.labelRunner.Text = "Иван Прудов (204) из RUS";
             // 
             // label9
             // 
@@ -158,7 +158,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.labelRunner);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
@@ -179,11 +179,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label labelRunner;
     }
 }

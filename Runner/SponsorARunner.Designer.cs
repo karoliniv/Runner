@@ -44,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxRunner = new System.Windows.Forms.ComboBox();
             this.runnerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.runnerDataSet = new Runner.RunnerDataSet();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,8 +52,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.labelMoney = new System.Windows.Forms.Label();
+            this.textBoxMoney = new System.Windows.Forms.TextBox();
             this.runnerTableAdapter = new Runner.RunnerDataSetTableAdapters.RunnerTableAdapter();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
@@ -229,19 +229,19 @@
             this.label6.TabIndex = 33;
             this.label6.Text = "Срок действия:";
             // 
-            // comboBox1
+            // comboBoxRunner
             // 
-            this.comboBox1.DataSource = this.runnerBindingSource;
-            this.comboBox1.DisplayMember = "ChooseRunner";
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 182);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 22);
-            this.comboBox1.TabIndex = 34;
-            this.comboBox1.ValueMember = "RunnerId";
-            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
+            this.comboBoxRunner.DataSource = this.runnerBindingSource;
+            this.comboBoxRunner.DisplayMember = "ChooseRunner";
+            this.comboBoxRunner.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxRunner.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.comboBoxRunner.FormattingEnabled = true;
+            this.comboBoxRunner.Location = new System.Drawing.Point(126, 182);
+            this.comboBoxRunner.Name = "comboBoxRunner";
+            this.comboBoxRunner.Size = new System.Drawing.Size(192, 22);
+            this.comboBoxRunner.TabIndex = 34;
+            this.comboBoxRunner.ValueMember = "RunnerId";
+            this.comboBoxRunner.Click += new System.EventHandler(this.comboBox1_Click);
             // 
             // runnerBindingSource
             // 
@@ -307,29 +307,30 @@
             this.label11.TabIndex = 39;
             this.label11.Text = "Фонд Кошек";
             // 
-            // label12
+            // labelMoney
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(575, 233);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 43);
-            this.label12.TabIndex = 40;
-            this.label12.Text = "50$";
+            this.labelMoney.AutoSize = true;
+            this.labelMoney.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMoney.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelMoney.Location = new System.Drawing.Point(575, 233);
+            this.labelMoney.Name = "labelMoney";
+            this.labelMoney.Size = new System.Drawing.Size(70, 43);
+            this.labelMoney.TabIndex = 40;
+            this.labelMoney.Text = "50$";
             // 
-            // textBox3
+            // textBoxMoney
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.Location = new System.Drawing.Point(557, 284);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(95, 20);
-            this.textBox3.TabIndex = 41;
-            this.textBox3.Text = "50";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBoxMoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMoney.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxMoney.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBoxMoney.Location = new System.Drawing.Point(557, 284);
+            this.textBoxMoney.Name = "textBoxMoney";
+            this.textBoxMoney.Size = new System.Drawing.Size(95, 20);
+            this.textBoxMoney.TabIndex = 41;
+            this.textBoxMoney.Text = "50";
+            this.textBoxMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxMoney.Click += new System.EventHandler(this.textBoxMoney_Click);
+            this.textBoxMoney.TextChanged += new System.EventHandler(this.textBoxMoney_TextChanged);
             // 
             // runnerTableAdapter
             // 
@@ -406,14 +407,14 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxMoney);
+            this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxRunner);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -464,8 +465,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
         private RunnerDataSet runnerDataSet;
         private System.Windows.Forms.BindingSource runnerBindingSource;
         private RunnerDataSetTableAdapters.RunnerTableAdapter runnerTableAdapter;
@@ -474,6 +473,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboBoxRunner;
+        public System.Windows.Forms.TextBox textBoxMoney;
+        public System.Windows.Forms.Label labelMoney;
     }
 }

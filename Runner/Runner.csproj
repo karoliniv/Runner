@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="charity_i.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="charity_i.Designer.cs">
+      <DependentUpon>charity_i.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindOutMoreInformation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FindOutMoreInformation.Designer.cs">
       <DependentUpon>FindOutMoreInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfCharities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfCharities.Designer.cs">
+      <DependentUpon>ListOfCharities.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -95,8 +107,14 @@
     <Compile Include="SponsorshipConfirmation.Designer.cs">
       <DependentUpon>SponsorshipConfirmation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="charity_i.resx">
+      <DependentUpon>charity_i.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FindOutMoreInformation.resx">
       <DependentUpon>FindOutMoreInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfCharities.resx">
+      <DependentUpon>ListOfCharities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -158,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\attention1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arise-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
