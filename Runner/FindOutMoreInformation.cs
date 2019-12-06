@@ -28,5 +28,12 @@ namespace Runner
             (new ListOfCharities()).ShowDialog();
             this.Show();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan y = Program.x - DateTime.Now;
+            label3.Text = y.Days.ToString() + " дней " + y.Hours.ToString() + " часов " + y.Minutes.ToString() + " минут до старта марафона!";
+
+        }
     }
 }

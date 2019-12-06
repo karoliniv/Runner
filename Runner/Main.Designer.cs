@@ -145,7 +145,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(256, 421);
+            this.label3.Location = new System.Drawing.Point(255, 421);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 8;

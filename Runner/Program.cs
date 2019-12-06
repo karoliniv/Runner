@@ -14,6 +14,7 @@ namespace Runner
 
         public static DateTime x = new DateTime(2020, 6, 6, 6, 6, 00);
 
+        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

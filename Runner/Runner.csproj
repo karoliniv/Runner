@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministratorMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministratorMenu.Designer.cs">
+      <DependentUpon>AdministratorMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="charity_i.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="charity_i.Designer.cs">
       <DependentUpon>charity_i.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contacts.Designer.cs">
+      <DependentUpon>Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoordinatorMenu.Designer.cs">
+      <DependentUpon>CoordinatorMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FindOutMoreInformation.cs">
       <SubType>Form</SubType>
@@ -90,10 +108,25 @@
     <Compile Include="RegisterAsARunner.Designer.cs">
       <DependentUpon>RegisterAsARunner.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegisterAsARunner2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterAsARunner2.Designer.cs">
+      <DependentUpon>RegisterAsARunner2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RunnerDataSet.cs">
+      <DependentUpon>RunnerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RunnerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RunnerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RunnerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RunnerMenu.Designer.cs">
+      <DependentUpon>RunnerMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="SponsorARunner.cs">
       <SubType>Form</SubType>
@@ -107,8 +140,17 @@
     <Compile Include="SponsorshipConfirmation.Designer.cs">
       <DependentUpon>SponsorshipConfirmation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdministratorMenu.resx">
+      <DependentUpon>AdministratorMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="charity_i.resx">
       <DependentUpon>charity_i.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contacts.resx">
+      <DependentUpon>Contacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoordinatorMenu.resx">
+      <DependentUpon>CoordinatorMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindOutMoreInformation.resx">
       <DependentUpon>FindOutMoreInformation.cs</DependentUpon>
@@ -137,6 +179,12 @@
     </Compile>
     <EmbeddedResource Include="RegisterAsARunner.resx">
       <DependentUpon>RegisterAsARunner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterAsARunner2.resx">
+      <DependentUpon>RegisterAsARunner2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunnerMenu.resx">
+      <DependentUpon>RunnerMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SponsorARunner.resx">
       <DependentUpon>SponsorARunner.cs</DependentUpon>
@@ -176,9 +224,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\attention1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arise-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

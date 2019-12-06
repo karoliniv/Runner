@@ -60,6 +60,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.runnerBindingSource)).BeginInit();
@@ -160,7 +162,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(192, 20);
             this.textBox1.TabIndex = 22;
-            this.textBox1.Text = "Ваше имя";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
@@ -171,7 +172,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(192, 20);
             this.textBox2.TabIndex = 23;
-            this.textBox2.Text = "Владелец карты";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // label2
@@ -327,7 +327,6 @@
             this.textBoxMoney.Name = "textBoxMoney";
             this.textBoxMoney.Size = new System.Drawing.Size(95, 20);
             this.textBoxMoney.TabIndex = 41;
-            this.textBoxMoney.Text = "50";
             this.textBoxMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxMoney.Click += new System.EventHandler(this.textBoxMoney_Click);
             this.textBoxMoney.TextChanged += new System.EventHandler(this.textBoxMoney_TextChanged);
@@ -345,7 +344,6 @@
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(190, 21);
             this.maskedTextBox1.TabIndex = 42;
-            this.maskedTextBox1.Text = "1234123412341234";
             this.maskedTextBox1.Click += new System.EventHandler(this.maskedTextBox1_Click);
             // 
             // maskedTextBox2
@@ -357,7 +355,6 @@
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(192, 21);
             this.maskedTextBox2.TabIndex = 43;
-            this.maskedTextBox2.Text = "123";
             this.maskedTextBox2.Click += new System.EventHandler(this.maskedTextBox2_Click);
             // 
             // button6
@@ -382,7 +379,6 @@
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(53, 21);
             this.maskedTextBox3.TabIndex = 46;
-            this.maskedTextBox3.Text = "01";
             this.maskedTextBox3.Click += new System.EventHandler(this.maskedTextBox3_Click);
             // 
             // maskedTextBox4
@@ -394,14 +390,32 @@
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(131, 21);
             this.maskedTextBox4.TabIndex = 47;
-            this.maskedTextBox4.Text = "2017";
             this.maskedTextBox4.Click += new System.EventHandler(this.maskedTextBox4_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(243, 421);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 20);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "Таймер";
             // 
             // SponsorARunner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.maskedTextBox4);
             this.Controls.Add(this.maskedTextBox3);
             this.Controls.Add(this.button6);
@@ -434,6 +448,8 @@
             this.Name = "SponsorARunner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SponsorARunner";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SponsorARunner_FormClosing);
+            this.Load += new System.EventHandler(this.SponsorARunner_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.runnerBindingSource)).EndInit();
@@ -476,5 +492,7 @@
         public System.Windows.Forms.ComboBox comboBoxRunner;
         public System.Windows.Forms.TextBox textBoxMoney;
         public System.Windows.Forms.Label labelMoney;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label12;
     }
 }

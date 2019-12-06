@@ -40,6 +40,7 @@
             this.runnerDataSet = new Runner.RunnerDataSet();
             this.runnerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.runnerTableAdapter = new Runner.RunnerDataSetTableAdapters.RunnerTableAdapter();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.runnerDataSet)).BeginInit();
@@ -144,6 +145,12 @@
             // 
             this.runnerTableAdapter.ClearBeforeFill = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ListOfCharities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,5 +189,6 @@
         private System.Windows.Forms.BindingSource runnerBindingSource;
         private RunnerDataSetTableAdapters.RunnerTableAdapter runnerTableAdapter;
         private System.Windows.Forms.FlowLayoutPanel listChars;
+        private System.Windows.Forms.Timer timer1;
     }
 }

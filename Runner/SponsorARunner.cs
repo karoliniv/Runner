@@ -37,17 +37,17 @@ namespace Runner
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = " ";
+            textBox1.Text = "";
         }
 
         private void textBox2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = " ";
+            textBox2.Text = "";
         }
 
         private void textBoxMoney_Click(object sender, EventArgs e)
         {
-            textBoxMoney.Text = " ";
+            textBoxMoney.Text = "";
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
@@ -62,12 +62,12 @@ namespace Runner
 
         private void maskedTextBox1_Click(object sender, EventArgs e)
         {
-            maskedTextBox1.Text = " "; 
+            maskedTextBox1.Text = ""; 
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-            comboBoxRunner.Text = " ";
+            comboBoxRunner.Text = "";
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -75,22 +75,77 @@ namespace Runner
             DateTime now = DateTime.Now;
             //MessageBox.Show(now.Year.ToString()+now.Month.ToString());
 
-            if(Convert.ToInt32(maskedTextBox4.Text) < now.Year)
-            {
-                MessageBox.Show("Wrong year");
+            
 
-                if (Convert.ToInt32(maskedTextBox3.Text) < now.Month)
+                if (String.IsNullOrWhiteSpace(textBox1.Text))
                 {
-                    MessageBox.Show("Wrong mounth");
-                }
+                    MessageBox.Show("Заполните все поля");
+                return;
+            } 
+                
+                else if (String.IsNullOrWhiteSpace(comboBoxRunner.Text))
+                {
+                    MessageBox.Show("Заполните все поля");
+                return;
             }
+
+                else if (String.IsNullOrWhiteSpace(textBox2.Text))
+                {
+                    MessageBox.Show("Заполните все поля");
+                return;
+            }
+
+                else if (String.IsNullOrWhiteSpace(maskedTextBox1.Text))
+                {
+                    MessageBox.Show("Заполните все поля");
+                return;
+            }
+
+                else if (String.IsNullOrWhiteSpace(maskedTextBox3.Text))
+                {
+                    MessageBox.Show("Заполните все поля");
+                return;
+            }
+
+                else if (String.IsNullOrWhiteSpace(maskedTextBox4.Text))
+                {
+                    MessageBox.Show("Заполните все поля");
+                return;
+            }
+
+                else if (String.IsNullOrWhiteSpace(maskedTextBox2.Text))
+                {
+                    MessageBox.Show("Заполните все поля");
+                return;
+            }
+
+                else if (String.IsNullOrWhiteSpace(textBoxMoney.Text))
+                {
+                    MessageBox.Show("Заполните все поля");
+                return;
+            }
+
+                if (Convert.ToInt32(maskedTextBox4.Text) < now.Year)
+                {
+                    MessageBox.Show("Wrong year");
+
+                    if (Convert.ToInt32(maskedTextBox3.Text) < now.Month)
+                    {
+                        MessageBox.Show("Wrong mounth");
+                    }
+                    return;
+                }
+            
 
             SponsorshipConfirmation x = new SponsorshipConfirmation();
             x.label12.Text = labelMoney.Text;
             x.labelRunner.Text = comboBoxRunner.Text;
 
+
+
             this.Close();
             x.ShowDialog();
+            this.Show();
 
         }
 
@@ -118,17 +173,33 @@ namespace Runner
 
         private void maskedTextBox3_Click(object sender, EventArgs e)
         {
-            maskedTextBox3.Text = " ";
+            maskedTextBox3.Text = "";
         }
 
         private void maskedTextBox4_Click(object sender, EventArgs e)
         {
-            maskedTextBox4.Text = " ";
+            maskedTextBox4.Text = "";
         }
 
         public void textBoxMoney_TextChanged(object sender, EventArgs e)
         {
             labelMoney.Text = textBoxMoney.Text + "$";
+        }
+
+        private void SponsorARunner_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SponsorARunner_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan y = Program.x - DateTime.Now;
+            label12.Text = y.Days.ToString() + " дней " + y.Hours.ToString() + " часов " + y.Minutes.ToString() + " минут до старта марафона!";
         }
     }
 }

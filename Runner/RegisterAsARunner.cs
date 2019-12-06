@@ -20,5 +20,32 @@ namespace Runner
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeSpan y = Program.x - DateTime.Now;
+            label3.Text = y.Days.ToString() + " дней " + y.Hours.ToString() + " часов " + y.Minutes.ToString() + " минут до старта марафона!";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new Login()).ShowDialog();
+            this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new Login()).ShowDialog();
+            this.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new RegisterAsARunner2()).ShowDialog();
+            this.Show();
+        }
     }
 }
