@@ -101,6 +101,8 @@ namespace Runner
                 MessageBox.Show("Заполните все поля");
                 return;
             }
+
+
         }
 
         private void maskedTextBox2_Leave(object sender, EventArgs e)

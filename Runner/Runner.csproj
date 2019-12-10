@@ -114,6 +114,12 @@
     <Compile Include="RegisterAsARunner2.Designer.cs">
       <DependentUpon>RegisterAsARunner2.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegisterForAnEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForAnEvent.Designer.cs">
+      <DependentUpon>RegisterForAnEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="RunnerDataSet.cs">
       <DependentUpon>RunnerDataSet.xsd</DependentUpon>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAsARunner2.resx">
       <DependentUpon>RegisterAsARunner2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForAnEvent.resx">
+      <DependentUpon>RegisterForAnEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RunnerMenu.resx">
       <DependentUpon>RunnerMenu.cs</DependentUpon>

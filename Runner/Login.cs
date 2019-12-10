@@ -38,7 +38,6 @@ namespace Runner
             DataRow[] z = y.Select();
 
 
-
             if(y.Count == 0)
             {
                 MessageBox.Show("Логин и/или пароль введен/введены неправильно!");

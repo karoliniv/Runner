@@ -1593,8 +1593,6 @@ namespace Runner {
             
             private global::System.Data.DataColumn columnGender;
             
-            private global::System.Data.DataColumn columnRunnerId;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public GenderDataTable() {
@@ -1638,14 +1636,6 @@ namespace Runner {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RunnerIdColumn {
-                get {
-                    return this.columnRunnerId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1684,8 +1674,7 @@ namespace Runner {
             public GenderRow AddGenderRow(string Gender) {
                 GenderRow rowGenderRow = ((GenderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Gender,
-                        null};
+                        Gender};
                 rowGenderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGenderRow);
                 return rowGenderRow;
@@ -1693,9 +1682,9 @@ namespace Runner {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GenderRow FindByRunnerId(int RunnerId) {
+            public GenderRow FindByGender(string Gender) {
                 return ((GenderRow)(this.Rows.Find(new object[] {
-                            RunnerId})));
+                            Gender})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1716,7 +1705,6 @@ namespace Runner {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnGender = base.Columns["Gender"];
-                this.columnRunnerId = base.Columns["RunnerId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1724,18 +1712,11 @@ namespace Runner {
             private void InitClass() {
                 this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGender);
-                this.columnRunnerId = new global::System.Data.DataColumn("RunnerId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRunnerId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnRunnerId}, true));
+                                this.columnGender}, true));
                 this.columnGender.AllowDBNull = false;
+                this.columnGender.Unique = true;
                 this.columnGender.MaxLength = 10;
-                this.columnRunnerId.AutoIncrement = true;
-                this.columnRunnerId.AutoIncrementSeed = -1;
-                this.columnRunnerId.AutoIncrementStep = -1;
-                this.columnRunnerId.AllowDBNull = false;
-                this.columnRunnerId.ReadOnly = true;
-                this.columnRunnerId.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2172,17 +2153,6 @@ namespace Runner {
                 }
                 set {
                     this[this.tableGender.GenderColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int RunnerId {
-                get {
-                    return ((int)(this[this.tableGender.RunnerIdColumn]));
-                }
-                set {
-                    this[this.tableGender.RunnerIdColumn] = value;
                 }
             }
         }
@@ -3840,25 +3810,25 @@ SELECT Email, Password, FirstName, LastName, RoleId FROM [User] WHERE (Email = @
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Gender";
             tableMapping.ColumnMappings.Add("Gender", "Gender");
-            tableMapping.ColumnMappings.Add("RunnerId", "RunnerId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Runner] WHERE (([Gender] = @Original_Gender) AND ([RunnerId] = @Orig" +
-                "inal_RunnerId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Gender] WHERE (([Gender] = @Original_Gender))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RunnerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RunnerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Gender] ([Gender]) VALUES (@Gender);\r\nSELECT Gender FROM Gender WHER" +
+                "E (Gender = @Gender)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Runner] SET [Gender] = @Gender WHERE (([Gender] = @Original_Gender) AND (" +
-                "[RunnerId] = @Original_RunnerId));\r\nSELECT Gender, RunnerId FROM Runner WHERE (R" +
-                "unnerId = @RunnerId)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Gender] SET [Gender] = @Gender WHERE (([Gender] = @Original_Gender));\r\nSE" +
+                "LECT Gender FROM Gender WHERE (Gender = @Gender)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RunnerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RunnerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RunnerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RunnerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3874,7 +3844,7 @@ SELECT Email, Password, FirstName, LastName, RoleId FROM [User] WHERE (Email = @
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Gender, RunnerId\r\nFROM            Runner";
+            this._commandCollection[0].CommandText = "SELECT        Gender\r\nFROM            Gender";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3935,14 +3905,13 @@ SELECT Email, Password, FirstName, LastName, RoleId FROM [User] WHERE (Email = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Gender, int Original_RunnerId) {
+        public virtual int Delete(string Original_Gender) {
             if ((Original_Gender == null)) {
                 throw new global::System.ArgumentNullException("Original_Gender");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Gender));
             }
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_RunnerId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3962,8 +3931,35 @@ SELECT Email, Password, FirstName, LastName, RoleId FROM [User] WHERE (Email = @
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Gender) {
+            if ((Gender == null)) {
+                throw new global::System.ArgumentNullException("Gender");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Gender));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Gender, string Original_Gender, int Original_RunnerId, int RunnerId) {
+        public virtual int Update(string Gender, string Original_Gender) {
             if ((Gender == null)) {
                 throw new global::System.ArgumentNullException("Gender");
             }
@@ -3976,8 +3972,6 @@ SELECT Email, Password, FirstName, LastName, RoleId FROM [User] WHERE (Email = @
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Original_Gender));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_RunnerId));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(RunnerId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3998,8 +3992,8 @@ SELECT Email, Password, FirstName, LastName, RoleId FROM [User] WHERE (Email = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Gender, string Original_Gender, int Original_RunnerId) {
-            return this.Update(Gender, Original_Gender, Original_RunnerId, Original_RunnerId);
+        public virtual int Update(string Original_Gender) {
+            return this.Update(Original_Gender, Original_Gender);
         }
     }
     

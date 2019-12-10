@@ -42,5 +42,12 @@ namespace Runner
             label3.Text = y.Days.ToString() + " дней " + y.Hours.ToString() + " часов " + y.Minutes.ToString() + " минут до старта марафона!";
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new RegisterForAnEvent()).ShowDialog();
+            this.Show();
+        }
     }
 }

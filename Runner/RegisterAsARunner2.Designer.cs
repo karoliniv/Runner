@@ -66,6 +66,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.countryTableAdapter = new Runner.RunnerDataSetTableAdapters.CountryTableAdapter();
             this.genderTableAdapter = new Runner.RunnerDataSetTableAdapters.GenderTableAdapter();
+            this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource3)).BeginInit();
@@ -74,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.runnerDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.runnerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -176,7 +178,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.genderBindingSource3;
+            this.comboBox1.DataSource = this.genderBindingSource;
             this.comboBox1.DisplayMember = "Gender";
             this.comboBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
@@ -184,7 +186,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(139, 22);
             this.comboBox1.TabIndex = 56;
-            this.comboBox1.ValueMember = "RunnerId";
+            this.comboBox1.ValueMember = "Gender";
             // 
             // genderBindingSource3
             // 
@@ -421,6 +423,11 @@
             // 
             this.genderTableAdapter.ClearBeforeFill = true;
             // 
+            // genderBindingSource
+            // 
+            this.genderBindingSource.DataMember = "Gender";
+            this.genderBindingSource.DataSource = this.runnerDataSet2;
+            // 
             // RegisterAsARunner2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +475,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.runnerDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.runnerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,5 +520,6 @@
         private RunnerDataSet runnerDataSet2;
         private System.Windows.Forms.BindingSource genderBindingSource3;
         private RunnerDataSetTableAdapters.GenderTableAdapter genderTableAdapter;
+        private System.Windows.Forms.BindingSource genderBindingSource;
     }
 }
